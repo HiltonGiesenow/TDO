@@ -1,0 +1,92 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+
+    <script src="https://statics.teams.cdn.office.net/sdk/v1.6.0/js/MicrosoftTeams.min.js" integrity="sha384-mhp2E+BLMiZLe7rDIzj19WjgXJeI32NkPvrvvZBrMi5IvWup/1NUfS5xuYN5S3VT" crossorigin="anonymous"></script>
+
+    <style>
+        .body {
+            font-size: 1.2em;
+        }
+
+        body.theme-dark {
+            color: white;
+        }
+
+        body.theme-default {
+        }
+    </style>
+</head>
+<body id="main">
+
+    <input type="button" id="myButton" value="Show Context" /> <br />
+    <input type="button" id="myButton2" value="Set Context" /> <br />
+    <textarea id="output" rows="5">log</textarea>
+
+    <p>here is some text...</p>
+
+    <script type="module">
+
+        (function () {
+
+            microsoftTeams.initialize();
+
+            document.getElementById('myButton').addEventListener('click', e => {
+                console.log(localStorage["value"]);
+                document.getElementById("output").value += localStorage["value"] + "\r\n";
+            });
+
+            document.getElementById('myButton2').addEventListener('click', e => {
+                localStorage["value"] = "foobar";
+            });
+
+            //var doThemeChange = true;
+
+            function tdo_themeChange(theme) {
+                console.log('theme is ' + theme);
+
+                //if (doThemeChange)
+                document.getElementsByTagName("body")[0].className = "theme-" + theme;
+            }
+
+            var getQuerystringValue = (function (a) {
+                if (a == "") return {};
+                var b = {};
+                for (var i = 0; i < a.length; ++i) {
+                    var p = a[i].split('=');
+                    if (p.length != 2) continue;
+                    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+                }
+                return b;
+            })(window.location.search.substr(1).split('&'));
+
+            console.log('theme from query is ' + getQuerystringValue["theTheme"]);
+            document.getElementsByTagName("body")[0].className = "theme-" + getQuerystringValue["theTheme"];
+
+            microsoftTeams.getContext(function (context) {
+                if (context && context.theme) {
+                    tdo_themeChange(context.theme);
+                }
+
+                console.log(context);
+            });
+
+            //microsoftTeams.registerOnThemeChangeHandler(tdo_themeChange);
+
+            microsoftTeams.appInitialization.notifyAppLoaded();
+
+            //microsoftTeams.appInitialization.notifySuccess();
+
+        })();
+
+    </script>
+</body>
+</html>

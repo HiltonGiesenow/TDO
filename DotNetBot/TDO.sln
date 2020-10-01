@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetBot", "DotNetBot.csproj", "{353982B1-1F10-4F09-A2FD-C81F2B0E3798}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProactiveConsoleApp", "..\ProactiveConsoleApp\ProactiveConsoleApp.csproj", "{C171BE36-40DB-4264-9868-9F0AB61CE17B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{353982B1-1F10-4F09-A2FD-C81F2B0E3798}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{353982B1-1F10-4F09-A2FD-C81F2B0E3798}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{353982B1-1F10-4F09-A2FD-C81F2B0E3798}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{353982B1-1F10-4F09-A2FD-C81F2B0E3798}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C171BE36-40DB-4264-9868-9F0AB61CE17B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C171BE36-40DB-4264-9868-9F0AB61CE17B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C171BE36-40DB-4264-9868-9F0AB61CE17B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C171BE36-40DB-4264-9868-9F0AB61CE17B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0360F028-C43A-4B4E-88DB-3AC78E55291C}
+	EndGlobalSection
+EndGlobal
